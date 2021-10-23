@@ -41,41 +41,41 @@ public:
         head = temp;
     }
 
-    void move(int data, int pos)
+    Node *getNode(int data)
     {
-        Node *prev, *curr = head;
-        while (curr)
+        Node *trav = head;
+        while (trav)
         {
-            if (curr->info == data)
-                break;
-            prev = curr;
-            curr = curr->next;
+            if (trav->info == data)
+                return trav;
+
+            trav = trav->next;
         }
-        if (curr == NULL)
+        return NULL;
+    }
+    void deleteNode(Node *trav)
+    {
+        if (trav->next == NULL)
         {
-            cout << "data not found in list ..." << endl;
+            cout << " cannot delete last node ... " << endl;
             return;
         }
+        trav->info = trav->next->info;
+        trav->next = trav->next->next;
+    }
 
-        if (curr == head){
-            head = head->next;
-            prev = head ; 
-        }
-        else
-            prev->next = curr->next;
-
-        Node *trav = prev;
-        for (int i = 0; i < pos; i++)
-        {
-            trav = trav->next;
-            if (trav == NULL)
-            {
-                cout << "can not move to this location ...";
-                return;
-            }
-        }
-        curr->next = trav->next;
-        trav->next = curr;
+    void insertAfter(int data, Node *node)
+    {
+        Node *temp = new Node(data);
+        temp->next = node->next;
+        node->next = temp;
+    }
+    void insertBefore(int data, Node *node)
+    {
+        Node *temp = new Node(node->info);
+        temp->next = node->next;
+        node->next = temp;
+        node->info = data;
     }
 };
 
@@ -94,6 +94,15 @@ int main()
     l.addAtBegin(10);
     l.display();
 
-    l.move(10, 2);
+    // get 50 node
+    Node *node = l.getNode(100);
+
+    // insert data after
+    // if (node)
+    //     l.insertAfter(101, node);
+
+    if (node)
+        l.insertBefore(101, node);
+
     l.display();
 }
