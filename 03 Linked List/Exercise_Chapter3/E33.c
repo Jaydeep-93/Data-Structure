@@ -42,7 +42,7 @@ main()
 		printf("Lists merge at node %d\n", p->info);
 }/*End of main()*/
 
-struct node *Find_mergePoint(struct node *start1, struct node *start2)
+struct node *  Find_mergePoint(struct node *start1, struct node *start2)
 {
 	struct node *p,*q;
 	int len1=0, len2=0, i, d;
