@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "E18.C": "cpp",
+        "E19.C": "cpp",
+        "E20.C": "cpp",
+        "E21.C": "cpp",
+        "E22.C": "cpp",
+        "E23.C": "cpp",
+        "E25.C": "cpp",
+        "E24.C": "cpp",
+        "E27.C": "cpp",
+        "E26.C": "cpp",
+        "E28.C": "cpp",
+        "E29.C": "cpp",
+        "E30.C": "cpp",
+        "E31.C": "cpp",
+        "E32.C": "cpp",
+        "E33.C": "cpp",
+        "E34.C": "cpp",
+        "E35.C": "cpp",
+        "E36.C": "cpp",
+        "E37.C": "cpp",
+        "E38.C": "cpp"
+    }
+}
